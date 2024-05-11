@@ -4,9 +4,10 @@ import cv2
 ascii_density = " .:-=+*#%@"
 ascii_image = ''
 
-image = cv2.imread('/home/malum/Desktop/coding_tests/img2ascii/images/lumahlinda.jpg')
+image_path = '/home/malum/Desktop/coding_tests/img2ascii/images/lumahlinda.jpg'
+image = cv2.imread(image_path)
 
-#Turn image into gray scale
+#Turn the image into gray scale
 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 height, width = image.shape
@@ -29,6 +30,7 @@ for i in range(new_height):
         ascii_image += respective_ascii(brightness)
     ascii_image += '\n'
 
+#Generate a txt of the ascii image
 # with open("ascii_image.txt", 'w') as f:
 #      f.write(ascii_image)
 
